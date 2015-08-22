@@ -8,7 +8,7 @@ Flexible yet powerful base64 encode/decode CLI tool
 * **Platform:** Cross-platform (released binaries for Windows)
 * **Windows binaries:** https://github.com/xZero707/xzbase64/releases(1.0.3.109)
 
-**Windows binaries version scheme:**
+**Compiled releases version scheme:**
 X.X.X.B
 + X are version numbers
 + B is a build number of version specified | Build is every single compilation after minor changes
