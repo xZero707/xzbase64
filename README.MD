@@ -6,7 +6,7 @@ Flexible yet powerful base64 encode/decode CLI tool
 **Latest version:** 1.0.3
 **Written in:** PHP
 **Platform:** Cross-platform (released binaries for Windows)
-**Windows binaries:** http://download.elit...se64-latest.zip (1.0.3.109)
+**Windows binaries:** https://github.com/xZero707/xzbase64/releases(1.0.3.109)
 
 **Windows binaries version scheme:**
 X.X.X.B
