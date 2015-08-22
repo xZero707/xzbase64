@@ -30,9 +30,10 @@ undamaged and fully fuctional files.
 + You may enter input directly as parameter
 + You may output directly to console instead of file.
  
-
-    Type xzbase64 -help or /help or /? for usage help
-    Type xzbase64 -help or /help or /? -file [optional: filename]   < This will extract help to default file xzbase64_help.txt or as you specify.
+```
+Type xzbase64 -help or /help or /? for usage help
+Type xzbase64 -help or /help or /? -file [optional: filename]   < This will extract help to default file xzbase64_help.txt or as you specify.
+```
 
 **Windows specific *(until there is more builds for different OS-es)*:**
 Check regulary for updates by runing xzbase64 --update-check 
