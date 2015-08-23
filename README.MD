@@ -44,3 +44,7 @@ Or xzbase64 --update-check  --and-update  (This will download and install update
 **Known issues *(unfixed bugs)*:**
 + Memory intensive for encoding big files (Eg. It take about 200MB for encoding/decoding 100MB file) | Unlikely to be fixed due to it's nature
 + May fail miserably if not enough RAM available (related to memory intensive)
+
+
+**How to compile it yourself?**
+If you have modified original source or for some other reason don't want to use precompiled binaries, take a look at COMPILE.MD for detailed instructions.
