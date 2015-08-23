@@ -50,4 +50,17 @@ Or xzbase64 --update-check  --and-update  (This will download and install update
 
 **How to compile it yourself?**
 
-If you have modified original source or for some other reason don't want to use precompiled binaries, take a look at **COMPILATION.MD** for detailed instructions.
+If you have modified original source or for some other reason don't want to use precompiled binaries, take a look at **[COMPILATION.MD](https://github.com/xZero707/xzbase64/blob/master/COMPILATION.MD)** for detailed instructions.
+
+
+**You have contributed?**
+
+Then just include modification of [AUTHORS.MD](https://github.com/xZero707/xzbase64/blob/master/AUTHORS.MD) (add your self) in commit. I'll be very happy to add you as well.
+For formatting, please follow existing entries.
+
+
+
+
+**LICENSE AGREEMENT**
+
+Read it here: [LICENSE](https://github.com/xZero707/xzbase64/blob/master/LICENSE)
