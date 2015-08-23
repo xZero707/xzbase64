@@ -3,7 +3,12 @@ COMPILATION INSTRUCTIONS
 
 Please note: This is for advanced users. If you didn't made any modifications to source and you don't wanna go through this process your self, then [download any of precompiled binary releases](https://github.com/xZero707/xzbase64/releases) for your OS (currently Windows only).
 
-**What you will need:**
+
+----------
+
+
+**What will you need:**
+
 1. [Bamcompile - Bambalam PHP compiler/embeder (PHP 4.4.4)](https://github.com/xZero707/Bamcompile/releases)
 2. xzbase64 src folder and files:
 + compile.bat (Batch file witch will execute all needed commands. Otherwise you have to.)
@@ -12,6 +17,7 @@ Please note: This is for advanced users. If you didn't made any modifications to
 
 
 **Let's start:**
+
 1. Download latest release of Bamcompile
 2. After download is finished, extract all Bamcompile files where you like.
 3. In folder where your Bamcompile copy is, you will find Examples folder. Navigate to it.
