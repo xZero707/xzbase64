@@ -6,7 +6,6 @@ Please note: This is for advanced users. If you didn't made any modifications to
 
 ----------
 
-
 **What will you need:**
 
 1. [Bamcompile - Bambalam PHP compiler/embeder (PHP 4.4.4)](https://github.com/xZero707/Bamcompile/releases)
