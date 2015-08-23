@@ -25,5 +25,5 @@ Please note: This is for advanced users. If you didn't made any modifications to
 compile.bat have some parameters, so you may use them if needed:
 ```
 compile.bat -bcponly    | Will only generate Bamcompile project file (BCP)
-compile.bat -keepbcp    | Generated Bamcompile will be not treated as temporary file but keept
+compile.bat -keepbcp    | Generated Bamcompile will be not treated as temporary file but keept instead
 ```
