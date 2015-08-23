@@ -36,9 +36,11 @@ Type xzbase64 -help or /help or /? -file [optional: filename]   < This will extr
 ```
 
 **Windows specific *(until there is more builds for different OS-es)*:**
-Check regulary for updates by runing xzbase64 --update-check 
+```
+Check regulary for updates by runing 
+xzbase64 --update-check 
 Or xzbase64 --update-check  --and-update  (This will download and install update automatically.)
- 
+ ```
 
  
 **Known issues *(unfixed bugs)*:**
