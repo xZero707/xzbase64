@@ -50,7 +50,7 @@ Or xzbase64 --update-check  --and-update  (This will download and install update
 
 **How to compile it yourself?**
 
-If you have modified original source or for some other reason don't want to use precompiled binaries, take a look at **[COMPILATION.MD](https://github.com/xZero707/xzbase64/blob/master/COMPILATION.MD)** for detailed instructions.
+If you have modified original source or for some other reason don't want to use [precompiled binaries](https://github.com/xZero707/Bamcompile/releases), take a look at **[COMPILATION.MD](https://github.com/xZero707/xzbase64/blob/master/COMPILATION.MD)** for detailed instructions.
 
 
 **You have contributed?**
