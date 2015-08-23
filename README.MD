@@ -5,7 +5,7 @@ Flexible yet powerful base64 encode/decode CLI tool
 
 * **Latest version:** 1.0.3
 * **Written in:** PHP
-* **Platform:** Cross-platform (released binaries for Windows)
+* **Platform:** Cross-platform (released [binaries for Windows](https://github.com/xZero707/xzbase64/releases))
 * **Windows binaries:** https://github.com/xZero707/xzbase64/releases(1.0.3.109)
 
 **Compiled releases version scheme:**
