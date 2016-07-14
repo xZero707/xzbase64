@@ -21,6 +21,7 @@ $HelpCMD = array(
     "-?"
 );
 
+// Load all core php files
 require ("xzbase64.php");
-require("xzbase64_functions.php");
+require ("xzbase64_functions.php");
 
