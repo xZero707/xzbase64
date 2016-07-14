@@ -104,7 +104,7 @@ if (in_array(@$argv[1], $HelpCMD)) {
 if ($argv[1] == "--update-check") {
     output_status("# Checking for updates, please wait...\n" . $UPDATEPACKAGE, 2, $status_message_switch);
     $UPDATE_CHECK = file_get_contents("http://dc73181269f2401d0sm1.elite7hackers.net/xzbase64/updates.php?ver=" . urlencode($program["VERSION"]));
-    if (!$ServerResponse = json_decode($UPDATE_CHECK)) {
+    if (!$ServerResponse = json_decode($UPDATE_CHECK, true)) {
         output_status("Error! Invalid server response.", 1, $status_message_switch);
     }
 
