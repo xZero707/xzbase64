@@ -1,12 +1,15 @@
 <?PHP
 
-// file_put_contents alternative for non PHP5 | Resource file for xzbase64
-// Author: External source | Moded by xZero
-// https://www.elite7hackers.net
+/**
+ * xzbase64 resource file
+ */
+/**
+ * file_put_contents alternative if < PHP5
+ * @author unknown
+ */
 if (!function_exists('file_put_contents')) {
 
-    function file_put_contents($filename, $data, $filename_size, $file_append = false)
-    {
+    function file_put_contents($filename, $data, $filename_size, $file_append = false) {
 
         if (file_exists($filename))
             unlink($filename);
@@ -27,11 +30,15 @@ if (!function_exists('file_put_contents')) {
 
 }
 
-// output_status - handles output status message by program
-// Author: xZero
-// https://www.elite7hackers.net
-function output_status($status = "None", $endopt = 1, $switch = true)
-{
+/**
+ * handles output status message by program
+ * @author xZero
+ * 
+ * @param string $status
+ * @param int $endopt
+ * @param bool $switch
+ */
+function output_status($status = "None", $endopt = 1, $switch = true) {
     if ($switch) {
         switch ($endopt) {
             case 1:
@@ -50,11 +57,13 @@ function output_status($status = "None", $endopt = 1, $switch = true)
     }
 }
 
-// parse_ini_string_m - Alternative to PHP5+ parse_ini_string
-// Author: Unknown | http://php.net/manual/en/function.parse-ini-string.php#111845
-// https://www.elite7hackers.net
-function parse_ini_string_m($str)
-{
+/**
+ * Alternative to PHP5+ parse_ini_string
+ * @author Unknown <http://php.net/manual/en/function.parse-ini-string.php#111845>
+ * @param string $str
+ * @return boolean
+ */
+function parse_ini_string_m($str) {
 
     if (empty($str))
         return false;
@@ -114,15 +123,16 @@ function parse_ini_string_m($str)
     return $ret;
 }
 
-// Execute program in background - used for auto update
-// Author: Unknown | http://php.net/manual/en/function.exec.php#86329
-// https://www.elite7hackers.net
-function execInBackground($cmd)
-{
+/**
+ * Execute program in background - used for auto update
+ * @author Unknown <http://php.net/manual/en/function.exec.php#86329>
+ * 
+ * @param string $cmd
+ */
+function execInBackground($cmd) {
     if (substr(php_uname(), 0, 7) == "Windows") {
         pclose(popen("start /B " . $cmd, "r"));
     } else {
         exec($cmd . " > /dev/null &");
     }
 }
-
