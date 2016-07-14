@@ -1,26 +1,15 @@
 <?PHP
 
-// Main file xzbase64
-// Author: xZero
-// https://www.elite7hackers.net
-error_reporting(0);
-require("xzbase64_functions.php");
-$PrgBuild = 109;
-$PrgVersion = "1.0.3.$PrgBuild (Build $PrgBuild)";
-$PrgSVersion = 103 . $PrgBuild;
-$ScriptName = preg_replace('/\.php$/', '', __FILE__);
-$status_message_switch = true;
-
-$HelpCMD = array(
-    "-help",
-    "/?",
-    "/help",
-    "-?"
-);
+/**
+ * Main file for xzbase64
+ * 
+ * @author xZero <xzero@elite7hackers.net>
+ * @version 1.0.7
+ */
 if (in_array(@$argv[1], $HelpCMD)) {
 
     $HelpLine = file("help_document.dat");
-    $helpLine[1] = "[HELP] Base64 tool by xZero Version $PrgVersion [HELP]\n";
+    $helpLine[1] = "[HELP] Base64 tool by xZero Version {$program["version"]} [HELP]\n";
 
     if (@$argv[2] == "-file") {
         $OUTFILE_FHLP = @$argv[3] or $OUTFILE_FHLP = $ScriptName . "_help.txt";
@@ -41,7 +30,7 @@ if (in_array(@$argv[1], $HelpCMD)) {
 
 if ($argv[1] == "--update-check") {
     output_status("# Checking for updates, please wait...\n" . $UPDATEPACKAGE, 2, $status_message_switch);
-    $updateCheckA = file_get_contents("http://dc73181269f2401d0sm1.elite7hackers.net/xzbase64/updates.php?ver=$PrgSVersion&hver=$PrgVersion");
+    $updateCheckA = file_get_contents("http://dc73181269f2401d0sm1.elite7hackers.net/xzbase64/updates.php?ver=" . urlencode($program["version"]));
     $updateCheckB = parse_ini_string_m($updateCheckA);
     $UPDATEPACKAGE = mt_rand(1409, 3000) . "_" . mt_rand(10000, 90000) . mt_rand(1000000000, 7000000000) . "_UPA.exe";
     if ($updateCheckA == "")
@@ -78,7 +67,7 @@ if ($argv[5] == "-s") {
 
 
 if ($argc < 4)
-    output_status("\n# Elite7Hackers Network - https://www.elite7hackers.net\n# Base64 tool by xZero Version: $PrgVersion\n# Type $ScriptName -help /help or /? for more info", 1, $status_message_switch);
+    output_status("\n# Elite7Hackers Network - https://www.elite7hackers.net\n# Base64 tool by xZero Version: {$program["version"]}\n# Type {$argv[0]} -help /help or /? for more info", 1, $status_message_switch);
 
 
 
