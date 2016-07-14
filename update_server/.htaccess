@@ -1,0 +1,10 @@
+# This is not required but recommended
+<Files "update.json">
+Order Allow,Deny
+Deny from all
+</Files>
+
+# nginx configuration (Not for .htaccess)
+# location /update.json {
+# deny all;
+# }
