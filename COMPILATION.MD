@@ -8,27 +8,19 @@ Please note: This is for advanced users. If you didn't made any modifications to
 
 **What will you need:**
 
-1. [Bamcompile - Bambalam PHP compiler/embeder (PHP 4.4.4)](https://github.com/xZero707/Bamcompile/releases)
-2. xzbase64 src folder and files:
-+ compile.bat (Batch file witch will execute all needed commands. Otherwise you have to.)
-+ compile_config.ini (Settings from it are used to create Bamcompile project file BCP)
-+ program.ico (Default icon file, or whatever icon you like but with that name, otherwise you must modify .ini(2.) to comply with changes)
+1. [PHC-WIN (PHP 5+)](https://github.com/jaredallard/phc-win/releases)
+2. xzbase64 src folder and files
++ xzbase64.php
 
 
 **Let's start:**
 
-1. Download latest release of Bamcompile
-2. After download is finished, extract all Bamcompile files where you like.
-3. In folder where your Bamcompile copy is, you will find Examples folder. Navigate to it.
-4. Now create a new folder inside and name it xzbase64 (or however you'd like)
-5. Navigate to newly created folder from previous step
-6. Now, there place src folder and files compile_config.ini, compile.bat and program.ico
-7. Execute file compile.bat
-8. Compilation is done! Now you just need your executable, nothing else as everything needed is embedded already (this is not guaranteed if you used any other PHP compiler/embeder).
+1. Download latest release of PHC-WIN
+2. After download is finished, extract all PHC-WIN files where you like.
+3. Run PHC-WIN
+4. In PHC-WIN turn on UPX and EVB (ENIGMA VIRTUAL BOX)
+5. In PHC-WIN click browse and navigate to **xzbase64/src/xzbase64.php**
+6. Click compile button
 
-
-compile.bat have some parameters, so you may use them if needed:
-```
-compile.bat -bcponly    | Will only generate Bamcompile project file (BCP)
-compile.bat -keepbcp    | Generated Bamcompile will be not treated as temporary file but keept instead
-```
+Compiled file (.exe) will appear **xzbase64/src/xzbase64.exe**
+Now you can use [Resource Hacker](http://www.angusj.com/resourcehacker/) to apply new icon to executable, change info, permissions manifest (Eg. UAC prompt) etc...
