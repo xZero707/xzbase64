@@ -108,7 +108,7 @@ if ($argv[1] == "--update-check") {
     if (!base64_decode($UPDATE_CHECK, true)) {
         output_status("Error! Invalid server response.", 1, $status_message_switch);
     }
-    $ServerResponse = unserialize(base64_decode($UPDATE_CHECK, true));
+    $ServerResponse = unserialize(base64_decode($UPDATE_CHECK));
 
     if ($ServerResponse['UPDATE']['AVAILABLE']) {
         ECHO "# Server reported that updates are available!\n# Latest version: " . $ServerResponse['UPDATE']['VERSION'] . "\n# Local version: " . $ServerResponse['LOCAL']['VERSION'];
