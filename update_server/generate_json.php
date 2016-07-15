@@ -9,7 +9,7 @@ $update = array(
     "VERSION" => "1.2.2",
     "DATE" => date("Y-m-d H:i:s"),
     "PASSWORD" => "d348ab4f1f165bdfbbf0b83906b8edd99d44019217d4ab81fb5e015f6692b709",
-    "UPA_FILE" => "dmsOVQZKEGEYPq3KUURPsIrjIUUWxSKP/240fXwO70vrzpEhwY2jpBuYbZolCmCRnVpzDr0ttv6AUIFi22OTd4dUYWL0FgFGn.upa"
+    "UPA_FILE" => "240fXwO70vrzpEhwY2jpBuYbZolCmCRnVpzDr0ttv6AUIFi22OTd4dUYWL0FgFGn.upa"
 );
 
 
