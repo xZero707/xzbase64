@@ -20,7 +20,7 @@ function init_download($file) {
 
 function response($array, $exit = true){
    if(is_array($array)){
-      echo json_encode($array, JSON_PRETTY_PRINT);
+      echo base64_encode(serialize($array));
       if($exit)
       exit;
    }

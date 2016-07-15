@@ -6,7 +6,8 @@
  * @author xZero <xzero@elite7hackers.net>
  * @version 1.0.7
  */
-error_reporting(0);
+error_reporting(1);
+//file_put_contents("debug.log", print_r(get_defined_functions(), true));
 
 $program = array(
     "VERSION" => "1.0.7",
