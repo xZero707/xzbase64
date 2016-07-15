@@ -85,6 +85,44 @@ function execInBackground($cmd) {
     }
 }
 
+/**
+ * Base64 Encode/Decode
+ * - WIth support for levels
+ */
+class base64_adv {
+
+    protected $level = 1;
+
+    public function setLevel($level) {
+        $this->level = $level;
+    }
+
+    public function encode($data) {
+        for ($i = 0; $i < $this->level; $i++) {
+            $data = base64_encode($data);
+        }
+        return $data;
+    }
+
+    public function decode($data) {
+        for ($i = 0; $i < $this->level; $i++) {
+            $data = base64_decode($data);
+        }
+        return $data;
+    }
+
+    public function urlencode($data) {
+        return rtrim(strtr($this->encode($data), '+/', '-_'), '=');
+    }
+
+    public function urldecode($data) {
+        return $this->decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT));
+    }
+
+}
+
+$base64 = new base64_adv();
+
 if (in_array(@$argv[1], $HelpCMD)) {
 
     if (@$argv[2] == "-file") {
@@ -108,7 +146,7 @@ if ($argv[1] == "--update-check") {
     if (!base64_decode($UPDATE_CHECK, true)) {
         output_status("Error! Invalid server response.", 1, $status_message_switch);
     }
-    $ServerResponse = unserialize(base64_decode($UPDATE_CHECK));
+    $ServerResponse = unserialize($base64->decode($UPDATE_CHECK));
 
     if ($ServerResponse['UPDATE']['AVAILABLE']) {
         ECHO "# Server reported that updates are available!\n# Latest version: " . $ServerResponse['UPDATE']['VERSION'] . "\n# Local version: " . $ServerResponse['LOCAL']['VERSION'];
@@ -186,11 +224,11 @@ switch ($argv[2]) {
 switch ($argv[1]) {
 
     case "-enc":
-        $output = base64_encode($input);
+        $output = $base64->encode($input);
         break;
 
     case "-dec":
-        $output = base64_decode($input);
+        $output = $base64->decode($input);
         break;
 }
 
