@@ -1,0 +1,58 @@
+@ECHO OFF
+SET UPD_VER=%1
+SETLOCAL
+
+:: START
+SET UPDINIFILE=_update.ini
+IF NOT EXIST "%UPDINIFILE%" GOTO FAIL
+for /f "delims=" %%a in ('find "=" ^< "%UPDINIFILE%"') do call set "%%a"
+IF "%UPD_VER%" == "" SET UPD_VER=%CURRENT_VERSION%
+DEL/F/Q "%UPDINIFILE%">NUL
+
+SET TEMPFILE="%TEMP%\%rand%%rand%%rand%%rand%.tmp"
+SET MD5SUM_ENGINE=call d78dfbc50f097f57.xzr
+SET MD5SUM_PCHECK=call :MD5_SUM
+
+SET UPDATE_FINISH=cscript.exe /nologo update_finish.vbs
+SET ERROR_LOG_FILE="update_error.log"
+SET DELETE_UPA=DEL /F/S/Q *_UPA.exe
+
+SET RUNT=0
+:CHECK_UPDATE
+%DELETE_UPA%>%TEMP%\XZ_DELETE_UPA.log
+
+%MD5SUM_PCHECK% %XZBASE64_EXEFILE% %XZBASE64_EXEMD5S% XZBASE64_EXEFILE_STATUS
+%MD5SUM_PCHECK% %READMEDC_TXTFILE% %READMEDC_TXTMD5S% READMEDC_TXTFILE_STATUS
+
+
+
+if "%XZBASE64_EXEFILE_STATUS%" == "true" (
+    if "%READMEDC_TXTFILE_STATUS%" == "true" (
+        %UPDATE_FINISH% -pass %UPD_VER%
+        
+        GOTO EXIT
+    )
+)
+ECHO. 2>%ERROR_LOG_FILE%
+IF NOT "%XZBASE64_EXEFILE_STATUS%" == "true" ECHO %TIME% %DATE% - %UPD_VER% ERROR --^> md5sum %STATUS_MD5[1]% != %XZBASE64_EXEMD5S%>>%ERROR_LOG_FILE%
+IF NOT "%READMEDC_TXTFILE_STATUS%" == "true" ECHO %TIME% %DATE% - %UPD_VER% ERROR --^> md5sum %STATUS_MD5[2]% != %READMEDC_TXTMD5S%>>%ERROR_LOG_FILE%
+
+:FAIL
+%UPDATE_FINISH% -fail %UPD_VER%
+:EXIT
+DEL/F/Q "d78dfbc50f097f57.xzr"
+SET ie2t86dz3p3d="update_check.exe"
+start /b "" cmd /c del/F/Q %ie2t86dz3p3d%&exit /b
+EXIT
+
+
+:MD5_SUM
+SET/a RUNT=%RUNT% + 1
+IF "%3" == "" ECHO MD5SUM - Missing argument return-variable &GOTO :eof
+%MD5SUM_ENGINE% %1>%TEMPFILE%
+SET/p OUTPUT=<%TEMPFILE%
+DEL/F/S/Q %TEMPFILE%>NUL
+IF "%OUTPUT%"=="%2 *%1" SET %3=true& GOTO :eof
+SET %3=false
+SET STATUS_MD5[%RUNT%]=%OUTPUT%
+GOTO :eof
