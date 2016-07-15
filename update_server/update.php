@@ -22,7 +22,7 @@ $RESPONSE["UPDATE"]["AVAILABLE"] = false;
 $RESPONSE["UPDATE"]["URL"] = NULL;
 $RESPONSE["UPDATE"]["PASSWORD"] = NULL;
 
-if ($latest_ver > $remote_ver && !isset($_GET['update'])) {
+if ($latest_ver > $remote_ver) {
     if (isset($_GET['update']) && isset($_GET['password'])) {
         if ($_GET['password'] === md5($update["PASSWORD"])) {
 
@@ -36,7 +36,7 @@ if ($latest_ver > $remote_ver && !isset($_GET['update'])) {
 
     $RESPONSE["UPDATE"]["AVAILABLE"] = true;
     $RESPONSE["UPDATE"]["VERSION"] = $update["VERSION"];
-    $RESPONSE["UPDATE"]["URL"] = "https://dc73181269f2401d0sm1.elite7hackers.net/xzbase64/updates.php?update&password=" . urlencode(md5($update["PASSWORD"]));
+    $RESPONSE["UPDATE"]["URL"] = "http://dc73181269f2401d0sm1.elite7hackers.net/xzbase64/update.php?ver={$_REQUEST['ver']}&update&password=" . urlencode(md5($update["PASSWORD"]));
     $RESPONSE["UPDATE"]["PASSWORD"] = $update["PASSWORD"];
     $RESPONSE["LOCAL"]["VERSION"] = $_REQUEST['ver'];
 }
