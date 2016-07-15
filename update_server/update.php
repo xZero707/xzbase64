@@ -1,10 +1,13 @@
 <?PHP
 
 require "functions.php";
-header("Content-Type:application/json");
+require "config.php";
+
+header("Content-Type: application/json");
 
 
-if (!$update = json_decode(implode("\n", file("update.json", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)), true)) {
+
+if (!$update = json_decode(implode("\n", file($config['UPDATE_JSON'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)), true)) {
     response(array("ERROR" => "INTERNAL_SERVER_ERROR"));
 }
 
@@ -28,15 +31,14 @@ if ($latest_ver > $remote_ver) {
 
             ignore_user_abort(true);
             set_time_limit(0); // disable the time limit for this script
-            $dl_file = preg_replace("([^\w\s\d\-_~,;:\[\]\(\].]|[\.]{2,})", '', $update['UPA_FILE']); // simple file name validation
-            init_download($dl_file);
+            init_download(__DIR__ . "/{$config['SECRET_DIR']}/" . $update['UPA_FILE']);
             exit;
         }
     }
 
     $RESPONSE["UPDATE"]["AVAILABLE"] = true;
     $RESPONSE["UPDATE"]["VERSION"] = $update["VERSION"];
-    $RESPONSE["UPDATE"]["URL"] = "http://dc73181269f2401d0sm1.elite7hackers.net/xzbase64/update.php?ver={$_REQUEST['ver']}&update&password=" . urlencode(md5($update["PASSWORD"]));
+    $RESPONSE["UPDATE"]["URL"] = $config['UPDATER_SCRIPT_URL'] . "/update.php?ver={$_REQUEST['ver']}&update&password=" . urlencode(md5($update["PASSWORD"]));
     $RESPONSE["UPDATE"]["PASSWORD"] = $update["PASSWORD"];
     $RESPONSE["LOCAL"]["VERSION"] = $_REQUEST['ver'];
 }
