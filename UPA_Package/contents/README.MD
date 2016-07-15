@@ -29,7 +29,8 @@ Overwrite=1
 ```
 
 This configures SFX package to be silent, overwrite xzbase64 files without asking and at end executing **update_check.exe**
-Code above works with WinRar. If you're creating SFX archive with some other tool, then you may have to configure options manualy.
+You also need to encrypt SFX archive with password and save password for later use (You need it for **update.json**).
+Code/method above works with WinRar. If you're creating SFX archive with some other tool, then you may have to configure options manualy.
 
 **LICENSE AGREEMENT**
 
