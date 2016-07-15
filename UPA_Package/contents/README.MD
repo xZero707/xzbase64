@@ -1,4 +1,4 @@
-# UPA Package - Source codes
+# UPA Package - Documentation
 For xzbase64 - (Can be adapted for any other software)
 
 ----------
@@ -17,15 +17,16 @@ Must be updated accordingly with update.
 + Does stuff batch alone can't do - alert messages. Used by **update_check.exe**
 
 **Building UPA**
+
 Now you're missing two files - xzbase64.exe and readme.txt. Those are packed together with files above.
 Proceed to create new UPA with WinRar and in comment type this:
---
+```
 ; UPA
 
 Setup=update_check.exe
 Silent=1
 Overwrite=1
---
+```
 
 This configures SFX package to be silent, overwrite xzbase64 files without asking and at end executing **update_check.exe**
 Code above works with WinRar. If you're creating SFX archive with some other tool, then you may have to configure options manualy.
